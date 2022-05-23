@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from 'react-redux';
+import { Grid, Container } from '@mui/material';
+import { Paper } from '@mui/material';
+import { blueGrey } from '@mui/material/colors';
+import CoctailList from './components/coctails/CoctailList';
+import Navbar from './components/ui/Navbar/Navbar';
+import bcImg from './assets/background.jpg';
 
 function App() {
+  const color = blueGrey[700];
+  const styles = {
+    paperContainer: {
+      backgroundImage: `url(${bcImg})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center center',
+      backgroundSize: 'cover',
+      width: '100vw',
+      height: '100vh'
+    }
+  };
+
+  const { param } = useSelector((state: any) => state.coctails);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Paper style={styles.paperContainer}>
+      <Container maxWidth={false}>
+        <Grid item xs={2}>
+          <Navbar />
+        </Grid>
+        <Grid item xs={8} sx={{ marginLeft: '500px', paddingTop: '50px' }}>
+          {param && <CoctailList />}
+        </Grid>
+      </Container>
+    </Paper>
   );
 }
 
