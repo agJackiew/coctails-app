@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Coctails app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Displaying data from free coctails API 
+
 
 ## Available Scripts
 
