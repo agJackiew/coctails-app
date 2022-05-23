@@ -1,4 +1,4 @@
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { coctailActions } from '../store/coctail-slice';
 import { CoctailList } from '../../types/types';
 
@@ -20,8 +20,7 @@ function* getCoctails(action: any): any {
 }
 
 function* coctailSaga() {
-  //
-  yield takeEvery('coctails/getCoctailsFetch', getCoctails);
+  yield takeLatest('coctails/getCoctailsFetch', getCoctails);
 }
 
 export default coctailSaga;

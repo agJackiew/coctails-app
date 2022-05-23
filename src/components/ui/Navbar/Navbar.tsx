@@ -1,8 +1,5 @@
-import React from 'react';
 import Drawer from '@mui/material/Drawer';
-import Toolbar from '@mui/material/Toolbar';
 import { Typography } from '@mui/material';
-import Divider from '@mui/material/Divider';
 import IngredientList from '../../ingredients/IngredientList';
 import { navbarStyles } from './styles';
 

@@ -1,13 +1,11 @@
 import { useSelector } from 'react-redux';
 import { Grid, Container } from '@mui/material';
 import { Paper } from '@mui/material';
-import { blueGrey } from '@mui/material/colors';
 import CoctailList from './components/coctails/CoctailList';
 import Navbar from './components/ui/Navbar/Navbar';
 import bcImg from './assets/background.jpg';
 
 function App() {
-  const color = blueGrey[700];
   const styles = {
     paperContainer: {
       backgroundImage: `url(${bcImg})`,

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
@@ -36,6 +35,7 @@ const CoctailList = () => {
     dispatch(coctailActions.setDetails(null));
   };
 
+  console.log(details);
   return (
     <Box
       sx={{
@@ -51,7 +51,7 @@ const CoctailList = () => {
         gutterBottom
         sx={{ padding: '15px' }}
       >
-        {param}
+        {param} cocktails
       </Typography>
       {!details && (
         <List>
@@ -72,6 +72,13 @@ const CoctailList = () => {
           <CardHeader
             title={details.strDrink}
             subheader={details.strCategory}
+          />
+          <CardMedia
+            component='img'
+            height='394'
+            image={details.strDrinkThumb}
+            alt='Coctail'
+            sx={{ objectFit: 'contain' }}
           />
           <CardContent>
             <Typography variant='body2' color='text.secondary'>

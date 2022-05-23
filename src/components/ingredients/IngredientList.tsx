@@ -15,11 +15,14 @@ const IngredientList = () => {
     (state: any) => state.ingredients
   );
 
+  const { details } = useSelector((state: any) => state.coctails);
+
   const showCoctails = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
     value: string
   ) => {
     dispatch(coctailActions.getCoctailsFetch(value));
+    dispatch(coctailActions.setDetails(null));
   };
 
   useEffect(() => {
